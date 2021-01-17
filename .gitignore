@@ -7,3 +7,5 @@ build
 .env-variables.properties
 *.iml
 .idea
+
+docs/worklog.txt

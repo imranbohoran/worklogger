@@ -1,3 +1,0 @@
-02-01-2021 01:30:00,setting up gradle project,15m,setup
-02-01-2021 01:59:00,setting up github project,10m,setup
-02-01-2021 12:40:00,kubernetes tutorial,40m,learning
