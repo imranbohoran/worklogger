@@ -2,6 +2,7 @@ package com.tib.worklogger;
 
 import com.tib.worklogger.entity.WorkItem;
 import com.tib.worklogger.model.NewWorkItem;
+import com.tib.worklogger.model.NewWorkItemRequest;
 import com.tib.worklogger.repository.WorkItemRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,7 +37,7 @@ class CreateWorkItemTest {
 
     @Test
     void shouldUseWorkItemRepositoryToCreateWorkItem() {
-        NewWorkItem newWorkItem = new NewWorkItem();
+        NewWorkItemRequest newWorkItem = new NewWorkItemRequest();
         newWorkItem.setDescription("test created item");
         newWorkItem.setDuration(2);
         newWorkItem.setDurationUnit(ChronoUnit.HOURS.toString());
@@ -59,7 +60,7 @@ class CreateWorkItemTest {
         assertThat(createdWorkItem.getId()).isEqualTo(workItem.getId());
     }
 
-    private WorkItem savedWorkItem(NewWorkItem newWorkItem) {
+    private WorkItem savedWorkItem(NewWorkItemRequest newWorkItem) {
         WorkItem workItem = new WorkItem();
         workItem.setId(UUID.randomUUID());
         workItem.setDescription(newWorkItem.getDescription());

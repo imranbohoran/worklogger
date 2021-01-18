@@ -21,3 +21,13 @@ A work logger to simply log the work
 ```
 source load-local-envs.sh
 ```
+- Run gradle to build the application
+```
+./gradlew clean build
+```
+
+## Generating API documentation
+```
+./gradlew clean test asciidoctor
+```
+This will generate the api documentaion in the `build/asciidoc/html5/` folder

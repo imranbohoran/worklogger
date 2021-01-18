@@ -2,6 +2,7 @@ package com.tib.worklogger;
 
 import com.tib.worklogger.entity.WorkItem;
 import com.tib.worklogger.model.NewWorkItem;
+import com.tib.worklogger.model.NewWorkItemRequest;
 import com.tib.worklogger.repository.WorkItemRepository;
 
 public class CreateWorkItem {
@@ -12,7 +13,7 @@ public class CreateWorkItem {
         this.workItemRepository = workItemRepository;
     }
 
-    public NewWorkItem execute(NewWorkItem newWorkItem) {
+    public NewWorkItem execute(NewWorkItemRequest newWorkItem) {
         WorkItem workItem = new WorkItem();
         workItem.setDescription(newWorkItem.getDescription());
         workItem.setDuration(newWorkItem.getDuration());
