@@ -77,18 +77,6 @@ tasks.register("postgresCheck", EnsurePostgresAvailable) {
     hostName = "localhost"
 }
 
-task('initialiseTestDB') {
-    doLast {
-        println ("Initialising the Test DB")
-        def stdout = new StringWriter()
-        def stderr = new StringWriter()
-        ['/bin/sh', '-c', "./db/init_test_db.sh"].execute().waitForProcessOutput(stdout, stderr)
-
-        println "OUTPUT: " + stdout.toString()
-        println "ERRORS: " + stderr.toString()
-    }
-}
-
 task('afterTest') {
     doLast {
         println "Cleaning up after test"
@@ -105,8 +93,7 @@ task('afterTest') {
     }
 }
 
-initialiseTestDB.dependsOn postgresCheck
-test.dependsOn initialiseTestDB
+test.dependsOn postgresCheck
 test.finalizedBy afterTest
 
 test () {
@@ -119,8 +106,7 @@ test () {
 
 asciidoctor {
     sourceDir 'src/doc/asciidoc'
-    attributes \
-      'snippets': file('build/generated-snippets')
+    attributes 'snippets': file('build/generated-snippets')
 }
 
 bootJar {
