@@ -1,0 +1,17 @@
+server:
+  port: 9001
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/worklog_test
+    username: worklog_test
+    password: worklog_test-pass
+
+application:
+  domain:
+    http://localhost:9001

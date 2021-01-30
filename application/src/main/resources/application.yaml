@@ -8,10 +8,10 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: jdbc:postgresql://localhost:5432/worklog_test
-    username: worklog_test
-    password: worklog_test-pass
+    url: jdbc:postgresql://localhost:5432/worklog
+    username: worklog
+    password: worklog-pass
 
 application:
   domain:
-    http://localhost:9090
+    http://localhost:9000
