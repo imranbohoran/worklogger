@@ -11,5 +11,7 @@ public class TextFileImporter {
             .build()
             .parse(args);
         System.out.println("Importing work log items from :" + workLogImporterArgs.fileName);
+
+        System.out.println("Still not implemented!!!");
     }
 }
