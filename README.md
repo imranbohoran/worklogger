@@ -39,7 +39,7 @@ source load-local-envs.sh
 ```
 ./gradlew clean :application:test asciidoctor
 ```
-This will generate the api documentaion in the `build/asciidoc/html5/` folder
+This will generate the api documentation in the `build/asciidoc/html5/` folder
 
 ## Running the application
 ```
