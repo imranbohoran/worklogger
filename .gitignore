@@ -9,3 +9,4 @@ build
 .idea
 
 docs/worklog.txt
+.bash_profile
