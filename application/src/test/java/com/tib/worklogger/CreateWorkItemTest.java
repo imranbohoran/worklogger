@@ -1,9 +1,9 @@
 package com.tib.worklogger;
 
+import com.tib.worklogger.repository.WorkItemRepository;
 import com.tib.worklogger.entity.WorkItem;
 import com.tib.worklogger.model.NewWorkItem;
 import com.tib.worklogger.model.NewWorkItemRequest;
-import com.tib.worklogger.repository.WorkItemRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
