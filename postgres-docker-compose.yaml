@@ -6,8 +6,8 @@ services:
     image: postgres:12.3-alpine
     restart: always
     volumes:
-      - ./application/db/init_db.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./application/db/init_test_db.sql:/docker-entrypoint-initdb.d/init-test.sql
+      - ./spring-boot-application/db/init_db.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./spring-boot-application/db/init_test_db.sql:/docker-entrypoint-initdb.d/init-test.sql
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: ${PG_USER}
