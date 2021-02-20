@@ -9,8 +9,6 @@ plugins {
 
 ext.posgresContainerFromBuild = false
 
-group = 'com.tib'
-version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
@@ -21,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    compile project(':application')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.flywaydb:flyway-core:6.4.3'

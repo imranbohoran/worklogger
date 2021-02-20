@@ -1,28 +1,27 @@
 package com.tib.worklogger;
 
-import com.tib.worklogger.repository.WorkItemRepository;
 import com.tib.worklogger.entity.WorkItem;
 import com.tib.worklogger.model.NewWorkItem;
 import com.tib.worklogger.model.NewWorkItemRequest;
+import com.tib.worklogger.repository.WorkItemRepository;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
-
-@ExtendWith(SpringExtension.class)
+@ExtendWith(MockitoExtension.class)
 class CreateWorkItemTest {
 
-    @MockBean
+    @Mock
     WorkItemRepository workItemRepository;
 
     @Captor
@@ -44,20 +43,20 @@ class CreateWorkItemTest {
         newWorkItem.setEventDate(LocalDateTime.now());
 
         WorkItem workItem = savedWorkItem(newWorkItem);
-        when(workItemRepository.save(workItemCaptor.capture())).thenReturn(workItem);
+        Mockito.when(workItemRepository.save(workItemCaptor.capture())).thenReturn(workItem);
 
         NewWorkItem createdWorkItem = this.createWorkItem.execute(newWorkItem);
 
-        assertThat(workItemCaptor.getValue().getDescription()).isEqualTo(newWorkItem.getDescription());
-        assertThat(workItemCaptor.getValue().getDuration()).isEqualTo(newWorkItem.getDuration());
-        assertThat(workItemCaptor.getValue().getDurationUnit()).isEqualTo(newWorkItem.getDurationUnit());
-        assertThat(workItemCaptor.getValue().getEventDate()).isEqualTo(newWorkItem.getEventDate());
-        assertThat(createdWorkItem.getDescription()).isEqualTo(workItem.getDescription());
-        assertThat(createdWorkItem.getDuration()).isEqualTo(workItem.getDuration());
-        assertThat(createdWorkItem.getDurationUnit()).isEqualTo(workItem.getDurationUnit());
-        assertThat(createdWorkItem.getEventDate()).isEqualTo(workItem.getEventDate());
-        assertThat(createdWorkItem.getCreationDate()).isEqualTo(workItem.getCreatedDate());
-        assertThat(createdWorkItem.getId()).isEqualTo(workItem.getId());
+        Assertions.assertThat(workItemCaptor.getValue().getDescription()).isEqualTo(newWorkItem.getDescription());
+        Assertions.assertThat(workItemCaptor.getValue().getDuration()).isEqualTo(newWorkItem.getDuration());
+        Assertions.assertThat(workItemCaptor.getValue().getDurationUnit()).isEqualTo(newWorkItem.getDurationUnit());
+        Assertions.assertThat(workItemCaptor.getValue().getEventDate()).isEqualTo(newWorkItem.getEventDate());
+        Assertions.assertThat(createdWorkItem.getDescription()).isEqualTo(workItem.getDescription());
+        Assertions.assertThat(createdWorkItem.getDuration()).isEqualTo(workItem.getDuration());
+        Assertions.assertThat(createdWorkItem.getDurationUnit()).isEqualTo(workItem.getDurationUnit());
+        Assertions.assertThat(createdWorkItem.getEventDate()).isEqualTo(workItem.getEventDate());
+        Assertions.assertThat(createdWorkItem.getCreationDate()).isEqualTo(workItem.getCreatedDate());
+        Assertions.assertThat(createdWorkItem.getId()).isEqualTo(workItem.getId());
     }
 
     private WorkItem savedWorkItem(NewWorkItemRequest newWorkItem) {
