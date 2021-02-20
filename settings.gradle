@@ -10,5 +10,6 @@
 rootProject.name = 'worklogger'
 
 include 'clients'
+include 'database'
 include 'application'
 include 'spring-boot-application'
