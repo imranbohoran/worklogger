@@ -84,7 +84,7 @@ class WorkItemResourceTest {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(workItemRequestContent))
             .andExpect(status().isCreated())
-            .andExpect(header().string("Location", applicationDomain + "/worklog/work-items/"+ newWorkItem.getId().toString()))
+            .andExpect(header().string("Location", applicationDomain + "/worklog/work-item/"+ newWorkItem.getId().toString()))
             .andExpect(jsonPath("$.id").value(newWorkItem.getId().toString()))
             .andExpect(jsonPath("$.description").value(newWorkItem.getDescription()))
             .andExpect(jsonPath("$.duration").value(newWorkItem.getDuration()))

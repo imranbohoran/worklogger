@@ -37,13 +37,15 @@ source load-local-envs.sh
 
 ## Generating API documentation
 ```
-./gradlew clean :application:test asciidoctor
+./gradlew clean spring-boot-application:test asciidoctor
 ```
 This will generate the api documentation in the `build/asciidoc/html5/` folder
 
 ## Running the application
+
+### SpringBoot implementation
 ```
-./gradlew :application:bootRun
+./gradlew clean spring-boot-application:bootRun
 ```
 
 ## Running the CLI client
@@ -54,7 +56,7 @@ export WORKLOG_PATH=/<PROJECT_ROOT>/worklogger/clients/build/libs/clients-0.0.1-
 
 #### Run the import to import work items under `worklogs`
 ````
-./clients/import.sh
+./clients/import.sh --file clients/worklogs/example.txt
 ````
 
 ## Build and run a docker image
