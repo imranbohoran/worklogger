@@ -9,7 +9,8 @@
 
 rootProject.name = 'worklogger'
 
-include 'clients'
+include 'api-contract'
 include 'database'
 include 'application'
 include 'spring-boot-application'
+include 'clients'

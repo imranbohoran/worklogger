@@ -1,8 +1,8 @@
 package com.tib.worklogger.api;
 
 import com.tib.worklogger.CreateWorkItem;
+import com.tib.worklogger.contract.NewWorkItemRequest;
 import com.tib.worklogger.model.NewWorkItem;
-import com.tib.worklogger.model.NewWorkItemRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +23,10 @@ public class WorkItemResource {
         this.applicationDomain = applicationDomain;
     }
 
-    @PostMapping(path = "/worklog/work-items", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/worklog/work-item", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<NewWorkItem> createNewWorkItem(@RequestBody NewWorkItemRequest newWorkItemRequest) {
         NewWorkItem newWorkItem = createWorkItem.execute(newWorkItemRequest);
-        return ResponseEntity.created(URI.create(applicationDomain + "/worklog/work-items/"+ newWorkItem.getId()))
+        return ResponseEntity.created(URI.create(applicationDomain + "/worklog/work-item/"+ newWorkItem.getId()))
             .body(newWorkItem);
     }
 }

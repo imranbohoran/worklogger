@@ -1,8 +1,8 @@
 package com.tib.worklogger;
 
+import com.tib.worklogger.contract.NewWorkItemRequest;
 import com.tib.worklogger.entity.WorkItem;
 import com.tib.worklogger.model.NewWorkItem;
-import com.tib.worklogger.model.NewWorkItemRequest;
 import com.tib.worklogger.repository.WorkItemRepository;
 
 public class CreateWorkItem {

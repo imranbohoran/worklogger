@@ -2,7 +2,7 @@ package com.tib.worklogger.api;
 
 import com.tib.worklogger.CreateWorkItem;
 import com.tib.worklogger.model.NewWorkItem;
-import com.tib.worklogger.model.NewWorkItemRequest;
+import com.tib.worklogger.contract.NewWorkItemRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,8 +27,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
@@ -81,7 +79,7 @@ class WorkItemResourceTest {
         when(createWorkItem.execute(workItemRequestArgumentCaptor.capture())).thenReturn(newWorkItem);
 
         mockMvc.perform(
-            post("/worklog/work-items")
+            post("/worklog/work-item")
                 .accept(MediaType.APPLICATION_JSON_VALUE)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(workItemRequestContent))

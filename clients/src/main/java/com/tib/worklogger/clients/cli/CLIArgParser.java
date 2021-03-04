@@ -9,7 +9,6 @@ public class CLIArgParser {
     @Parameter
     public List<String> parameters = Lists.newArrayList();
 
-    @Parameter(names = { "--file", "-f" }, required = true, description = "The name of the file with work log items to import")
+    @Parameter(names = { "--file", "-f" }, required = true, description = "The fully qualified path of the file with work log items to import")
     public String fileName;
-
 }
