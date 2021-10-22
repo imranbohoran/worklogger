@@ -9,7 +9,7 @@ A work logger to simply log the work
 
 ## Setup local environment
 - Ensure postgres server is running 
-- Add an `.env-variavles.properties` file at the root of the project
+- Add an `.env-variables.properties` file at the root of the project
 - Add the postgres user and password as key value pairs    
 ```
     PG_USER=<the-postgres-user>
