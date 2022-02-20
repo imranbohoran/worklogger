@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile project(':api-contract')
+    implementation project(':api-contract')
 
     implementation 'jakarta.persistence:jakarta.persistence-api:2.2.3'
 

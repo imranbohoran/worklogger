@@ -14,7 +14,7 @@ repositories {
 sourceCompatibility = '11'
 
 dependencies {
-	compile project(':api-contract')
+	implementation project(':api-contract')
 
 	implementation 'com.beust:jcommander:1.78'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.1'
