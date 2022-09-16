@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.4.2'
+    id 'org.springframework.boot' version '2.7.3'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id "org.asciidoctor.jvm.convert" version "3.3.2"
     id 'java'
@@ -19,15 +19,15 @@ dependencies {
     implementation project(':api-contract')
     implementation project(':application')
     implementation project(':database')
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.flywaydb:flyway-core:6.4.3'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.3'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.3'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.7.3'
+    implementation 'org.flywaydb:flyway-core:9.3.0'
 
-    runtimeOnly 'org.postgresql:postgresql'
+    runtimeOnly 'org.postgresql:postgresql:42.5.0'
 
-    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc:2.0.6.RELEASE'
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.7.3') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 }
