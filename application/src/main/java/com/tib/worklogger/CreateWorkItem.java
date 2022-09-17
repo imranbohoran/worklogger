@@ -22,14 +22,6 @@ public class CreateWorkItem {
 
         WorkItem savedWorkItem = workItemRepository.save(workItem);
 
-        NewWorkItem createdWorkLogItem = new NewWorkItem();
-        createdWorkLogItem.setId(savedWorkItem.getId());
-        createdWorkLogItem.setDescription(savedWorkItem.getDescription());
-        createdWorkLogItem.setDuration(savedWorkItem.getDuration());
-        createdWorkLogItem.setDurationUnit(savedWorkItem.getDurationUnit());
-        createdWorkLogItem.setEventDate(savedWorkItem.getEventDate());
-        createdWorkLogItem.setCreationDate(savedWorkItem.getCreatedDate());
-
-        return createdWorkLogItem;
+        return NewWorkItem.fromWorkItem(savedWorkItem);
     }
 }

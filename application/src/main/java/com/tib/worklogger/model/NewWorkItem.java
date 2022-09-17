@@ -1,5 +1,7 @@
 package com.tib.worklogger.model;
 
+import com.tib.worklogger.entity.WorkItem;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -10,6 +12,18 @@ public class NewWorkItem {
     private String durationUnit;
     private UUID id;
     private LocalDateTime creationDate;
+
+    public static NewWorkItem fromWorkItem(WorkItem item) {
+        NewWorkItem createdWorkLogItem = new NewWorkItem();
+        createdWorkLogItem.setId(item.getId());
+        createdWorkLogItem.setDescription(item.getDescription());
+        createdWorkLogItem.setDuration(item.getDuration());
+        createdWorkLogItem.setDurationUnit(item.getDurationUnit());
+        createdWorkLogItem.setEventDate(item.getEventDate());
+        createdWorkLogItem.setCreationDate(item.getCreatedDate());
+
+        return createdWorkLogItem;
+    }
 
     public LocalDateTime getEventDate() {
         return eventDate;
