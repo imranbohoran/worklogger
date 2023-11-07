@@ -91,7 +91,7 @@ class WorkItemResourceTest {
             .andExpect(jsonPath("$.durationUnit").value(newWorkItem.getDurationUnit()))
             .andExpect(jsonPath("$.eventDate").value(newWorkItem.getEventDate().format(DateTimeFormatter.ISO_DATE_TIME)))
             .andExpect(jsonPath("$.creationDate").value(newWorkItem.getCreationDate().format(DateTimeFormatter.ISO_DATE_TIME)))
-            .andDo(document("creat-worklog-item",
+            .andDo(document("create-worklog-item",
                 responseFields(
                     fieldWithPath("id").description("The id of the new worklog item"),
                     fieldWithPath("description").description("The description of the work item"),

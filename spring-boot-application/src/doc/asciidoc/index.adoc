@@ -7,10 +7,10 @@ This is the API documentation for the APIs published from this repository.
 To create a new worklog item using the API
 
 ==== Sample Request
-include::{snippets}/creat-worklog-item/curl-request.adoc[]
+include::{snippets}/create-worklog-item/curl-request.adoc[]
 
 ==== Sample Response
-include::{snippets}/creat-worklog-item/http-response.adoc[]
+include::{snippets}/create-worklog-item/http-response.adoc[]
 
 ==== Response fields
-include::{snippets}/creat-worklog-item/response-fields.adoc[]
+include::{snippets}/create-worklog-item/response-fields.adoc[]
